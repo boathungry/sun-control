@@ -1,0 +1,24 @@
+{
+  "name": "com.envalys.sun-control",
+  "version": "1.0.0",
+  "displayName": "Sun Control",
+  "description": "A package allowing for realistic sun positioning based on coordinates, date and time.",
+  "author": {
+    "name": "Envalys"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "^1.14.0"
+  },
+  "samples": [
+    {
+      "displayName": "Prefabs",
+      "description": "",
+      "path": "Samples~/Prefabs"
+    },
+    {
+      "displayName": "Unistorm Integration",
+      "description": "",
+      "path": "Samples~/UnistormIntegration"
+    }
+  ]
+}

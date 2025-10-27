@@ -1,0 +1,76 @@
+{
+    "name": "Sun Input Actions",
+    "maps": [
+        {
+            "name": "Sun",
+            "id": "ddf0d663-2fff-465d-b0e2-329ec28a1653",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "865fd79c-d1ab-431d-9492-431203c98951",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SetDateTime",
+                    "type": "Button",
+                    "id": "a673d21e-7441-4697-bcbe-4d0a8665b32a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "eea3b6e4-bb89-4d1f-bcb5-d0309d1f5599",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "8687458c-33f7-4ce7-af5a-63f165e607ea",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "cc1e523d-6423-44aa-a480-0eedf4b1704e",
+                    "path": "<Keyboard>/period",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e9473c77-03e5-49dd-85e8-7d4600d25a17",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetDateTime",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
