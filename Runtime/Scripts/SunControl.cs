@@ -42,6 +42,7 @@ namespace SunControl
         public StartingDate date;
         public StartingTime time;
         public GameObject sun;
+        public float sunSpeed = 100;
         public SunRotationOffset offset;
 
         private DateTime dateTime;
@@ -133,7 +134,7 @@ namespace SunControl
             // In Unity, the azimuth translates to rotating around the Y axis
             // and the altitude translates to rotating around the X axis
         }
-        
+
         void Start()
         {
             dateTime = new DateTime(date.year, date.month, date.day, time.hour, time.minute, 0);
@@ -148,7 +149,7 @@ namespace SunControl
         {
             if (sunMoveValue != 0)
             {
-                SetDateTime(dateTime.AddMinutes(sunMoveValue * Time.deltaTime * 100));
+                SetDateTime(dateTime.AddMinutes(sunMoveValue * Time.deltaTime * sunSpeed));
             }
         }
     }
