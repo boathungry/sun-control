@@ -137,7 +137,10 @@ namespace SunControl
             Vector2 sunPos = sunCalc.GetSunPosition(dateTime, latitude, longitude);
             azimuth = sunPos.x + GetRotationOffset();
             altitude = sunPos.y;
-            sun.transform.eulerAngles = new Vector3(altitude, azimuth);
+            if (sun != null)
+            {
+                sun.transform.eulerAngles = new Vector3(altitude, azimuth);
+            }
             // In Unity, the azimuth translates to rotating around the Y axis
             // and the altitude translates to rotating around the X axis
         }
