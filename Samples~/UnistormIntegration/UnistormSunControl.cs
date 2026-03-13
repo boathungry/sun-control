@@ -5,17 +5,13 @@ using System;
 
 public class UnistormSunControl : MonoBehaviour
 {
-    public UniStormManager unistormManager;
+    public UniStormSystem unistormInstance;
 
     private SunControl.SunControl sunControl;
     private DateTime dateTime;
 
     void Start()
     {
-        if (!unistormManager)
-        {
-            unistormManager = FindFirstObjectByType<UniStormManager>();
-        }
         sunControl = gameObject.GetComponent<SunControl.SunControl>();
         UpdateDateTime();
     }
@@ -23,6 +19,8 @@ public class UnistormSunControl : MonoBehaviour
     void UpdateDateTime()
     {
         dateTime = sunControl.GetDateTime();
+        unistormInstance.SunRevolution = Convert.ToInt32(sunControl.azimuth);
+        unistormInstance.m_TimeFloat = (sunControl.altitude + 100) / 360;
     }
 
     void Update()

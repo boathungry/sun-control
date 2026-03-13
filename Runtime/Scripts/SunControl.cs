@@ -45,6 +45,11 @@ namespace SunControl
         public float sunSpeed = 100;
         public SunRotationOffset offset;
 
+        [HideInInspector]
+        public float azimuth;
+        [HideInInspector]
+        public float altitude;
+
         private DateTime dateTime;
         private SunCalculations sunCalc;
         private float sunMoveValue;
@@ -130,7 +135,9 @@ namespace SunControl
         void SetSunPosition(DateTime dateTime)
         {
             Vector2 sunPos = sunCalc.GetSunPosition(dateTime, latitude, longitude);
-            sun.transform.eulerAngles = new Vector3(sunPos.y, sunPos.x + GetRotationOffset());
+            azimuth = sunPos.x + GetRotationOffset();
+            altitude = sunPos.y;
+            sun.transform.eulerAngles = new Vector3(altitude, azimuth);
             // In Unity, the azimuth translates to rotating around the Y axis
             // and the altitude translates to rotating around the X axis
         }
