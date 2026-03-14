@@ -9,6 +9,7 @@ public class UnistormSunControl : MonoBehaviour
 
     private SunControl.SunControl sunControl;
     private DateTime dateTime;
+    private float timeFloat = 0f;
 
     void Start()
     {
@@ -20,12 +21,13 @@ public class UnistormSunControl : MonoBehaviour
     {
         dateTime = sunControl.GetDateTime();
         unistormInstance.SunRevolution = Convert.ToInt32(sunControl.azimuth);
-        unistormInstance.m_TimeFloat = (sunControl.altitude + 100) / 360;
+        timeFloat = (sunControl.altitude + 100) / 360;
+        unistormInstance.m_TimeFloat = timeFloat;
     }
 
     void Update()
     {
-        if (dateTime != sunControl.GetDateTime())
+        if (dateTime != sunControl.GetDateTime() || Math.Abs(timeFloat - unistormInstance.m_TimeFloat) > 0.05)
         {
             UpdateDateTime();
         }
